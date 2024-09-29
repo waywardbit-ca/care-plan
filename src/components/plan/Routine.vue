@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import List from '../../components/controls/List.vue';
+import ListItem from '../../components/controls/ListItem.vue';
 import Panel from '../../components/controls/Panel.vue';
 </script>
 
@@ -8,19 +10,12 @@ import Panel from '../../components/controls/Panel.vue';
         <div class="row">
             <div class="col-12 col-md-3">
                 <h4><span class="far fa-sunrise"></span> Morning</h4>
-                <ul class="list-unstyled">
-                    <li><span class="far fa-face-sleeping"></span> Let me sleep until <mark>after</mark> breakfast</li>
-                    <li><span class="far fa-door-open"></span> Enter room <mark>10</mark> to <mark>15</mark> minutes
-                        <mark>before</mark>my care
-                    </li>
-                    <li><span class="far fa-window-frame"></span> Open curtains <mark>upon</mark> entering so I can
-                        start to
-                        wake <mark>gradually</mark></li>
-                    <li><span class="far fa-heart"></span> Try good incentives to get me up: <mark>coffee</mark> and
-                        <mark>ice
-                            cream</mark>
-                    </li>
-                </ul>
+                <List>
+                    <ListItem :icon="{ code: 'fa-face-sleeping' }">Let me sleep until after breakfast</ListItem>
+                    <ListItem :icon="{ code: 'fa-door-open' }">Enter room 10 to 15 minutes before my care</ListItem>
+                    <ListItem :icon="{ code: 'fa-window-frame' }">Open curtains upon entering so I can start to wake gradually</ListItem>
+                    <ListItem :icon="{ code: 'fa-heart' }">Try good incentives to get me up: coffee and ice cream</ListItem>
+                </List>
             </div>
             <div class="col-12 col-md-3">
                 <h4><span class="far fa-sun"></span> Daytime</h4>

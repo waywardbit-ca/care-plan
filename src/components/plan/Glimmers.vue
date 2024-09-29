@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import List from '../../components/controls/List.vue';
+import ListItem from '../../components/controls/ListItem.vue';
 import Panel from '../../components/controls/Panel.vue';
 </script>
 
@@ -7,12 +9,12 @@ import Panel from '../../components/controls/Panel.vue';
         <template v-slot:heading>
             Things I <strong><span class="text-success">really</span></strong> like
         </template>
-        <ul class="list-unstyled list-inline">
-            <li class="list-inline-item"><span class="far fa-music"></span> Music</li>
-            <li class="list-inline-item"><span class="far fa-guitar"></span> Guitar</li>
-            <li class="list-inline-item"><span class="far fa-coffee"></span> Coffee</li>
-            <li class="list-inline-item"><span class="far fa-ice-cream"></span> Ice Cream</li>
-        </ul>
+        <List direction="horizontal">
+            <ListItem :icon="{ code: 'fa-music' }">Music</ListItem>
+            <ListItem :icon="{ code: 'fa-guitar' }">Guitar</ListItem>
+            <ListItem :icon="{ code: 'fa-coffee' }">Coffee</ListItem>
+            <ListItem :icon="{ code: 'fa-ice-cream' }">Ice cream</ListItem>
+        </List>
     </Panel>
 </template>
 
