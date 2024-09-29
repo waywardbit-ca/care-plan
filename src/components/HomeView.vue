@@ -6,7 +6,6 @@ import Triggers from '../components/plan/Triggers.vue';
 import Routine from '../components/plan/Routine.vue';
 import Agitation from '../components/plan/Agitation.vue';
 import Refusal from '../components/plan/Refusal.vue';
-import Behaviour from '../components/plan/Behaviour.vue';
 </script>
 
 <template>
@@ -32,7 +31,6 @@ import Behaviour from '../components/plan/Behaviour.vue';
         </div>
         <div class="col-12 col-md-6">
             <Approach></Approach>
-            <Behaviour></Behaviour>
         </div>
     </div>
 </template>

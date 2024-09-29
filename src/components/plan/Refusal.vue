@@ -1,33 +1,29 @@
 <script setup lang="ts">
+import List from '../../components/controls/List.vue';
+import ListItem from '../../components/controls/ListItem.vue';
 import Panel from '../../components/controls/Panel.vue';
 </script>
 
 <template>
     <Panel type="bad" :icon="{ code: 'fa-face-angry' }">
         <template v-slot:heading>If I refuse care...</template>
-        <ul class="list-unstyled">
-            <li><span class="far fa-octagon-exclamation text-danger"></span> <strong class="text-danger">STOP</strong>
-                what you are doing</li>
-            <li><span class="far fa-question"></span> Ask yourself if I am I safe (not a risk to myself/others, no skin
-                breakdown, etc.)?
-                <ul class="list-unstyled">
-                    <li><span class="far fa-check text-success"></span> Safe:
-                        <ul>
-                            <li><span class="far fa-face-sleeping"></span> Let me rest/sleep</li>
-                            <li><span class="far fa-user-nurse"></span> Inform the <abbr title="Registered Nurse">RN</abbr></li>
-                        </ul>
-                    </li>
-                    <li><span class="far fa-times text-danger"></span> Not safe:
-                        <ul>
-                            <li><span class="far fa-thought-bubble"></span> Think about why this is happening</li>
-                            <li><span class="far fa-clock"></span> Advise that you'll be back at a certain time</li>
-                            <li><span class="far fa-user-nurse"></span> Inform the <abbr title="Registered Nurse">RN</abbr></li>
-                            <li><span class="far fa-swap"></span> Modify the approach upon return</li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-        </ul>
+        <List>
+            <ListItem :icon="{ code: 'fa-octagon-exclamation' }" type="bad">STOP WHAT YOU ARE DOING</ListItem>
+            <ListItem :icon="{ code: 'fa-circle-question' }">Am I safe?
+                <List :indent="true">
+                    <ListItem :icon="{ code: 'fa-face-sleeping' }">Let me rest/sleep</ListItem>
+                    <ListItem :icon="{ code: 'fa-user-nurse' }">Inform the <abbr title="Registered Nurse">RN</abbr></ListItem>
+                </List>
+            </ListItem>
+            <ListItem :icon="{ code: 'fa-circle-question' }">Am I unsafe?
+                <List :indent="true">
+                    <ListItem :icon="{ code: 'fa-thought-bubble' }">Think about why this is happening</ListItem>
+                    <ListItem :icon="{ code: 'fa-clock' }">Advise that you'll be back at a certain time</ListItem>
+                    <ListItem :icon="{ code: 'fa-user-nurse' }">Inform the <abbr title="Registered Nurse">RN</abbr></ListItem>
+                    <ListItem :icon="{ code: 'fa-swap' }">Modify the approach upon return</ListItem>
+                </List>
+            </ListItem>
+        </List>
     </Panel>
 </template>
 
