@@ -1,8 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Panel from '../../components/controls/Panel.vue';
+</script>
 
 <template>
-    <div class="card well p-1 mb-3">
-        <h3><span class="far fa-comments"></span> Interaction</h3>
+    <Panel type="basic" :icon="{ code: 'fa-comments'}">
+        <template v-slot:heading>Interaction</template>
         <ul class="list-unstyled">
             <li><span class="far fa-handshake-angle"></span> <mark>Gentle but firm</mark> approach works best</li>
             <li><span class="far fa-hand-wave"></span> <mark>Introduce yourself</mark> and <mark>explain why</mark> you
@@ -15,7 +17,7 @@
             <li><span class="far fa-mars"></span><mark> Male staff members present helps</mark> make care easier
                 (depends on mood and agreeableness)</li>
         </ul>
-    </div>
+    </Panel>
 </template>
 
 <style scoped></style>

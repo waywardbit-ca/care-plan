@@ -1,12 +1,14 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Panel from '../../components/controls/Panel.vue';
+</script>
 
 <template>
-    <div class="card well p-1 mb-3 border-danger bg-danger-subtle">
-        <p>Things I really <span class="text-danger"><strong>DO NOT</strong></span> like:</p>
+    <Panel type="bad" :icon="{ code: 'fa-thumbs-down' }">
+        <template v-slot:heading>Things I <strong><u>do not</u></strong> like</template>
         <ul class="list-unstyled">
             <li><span class="far fa-comments"></span> Multiple people talking at a time</li>
         </ul>
-    </div>
+    </Panel>
 </template>
 
 <style scoped></style>

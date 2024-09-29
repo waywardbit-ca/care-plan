@@ -1,8 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Panel from '../../components/controls/Panel.vue';
+</script>
 
 <template>
-    <div class="card well p-1 mb-3 border-danger bg-danger-subtle">
-        <h3><span class="far fa-face-angry"></span> If I refuse care...</h3>
+    <Panel type="bad" :icon="{ code: 'fa-face-angry' }">
+        <template v-slot:heading>If I refuse care...</template>
         <ul class="list-unstyled">
             <li><span class="far fa-octagon-exclamation text-danger"></span> <strong class="text-danger">STOP</strong>
                 what you are doing</li>
@@ -26,7 +28,7 @@
                 </ul>
             </li>
         </ul>
-    </div>
+    </Panel>
 </template>
 
 <style scoped></style>
