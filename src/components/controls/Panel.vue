@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, useSlots } from 'vue';
+import { useSlots } from 'vue';
 
 export interface iIcon {
     style?: 'far' | 'fas' | 'fad';
@@ -17,7 +17,7 @@ const props = withDefaults(defineProps<iProps>(), {
 const slots = useSlots();
 
 // methods
-const hasSlot = (name) => {
+const hasSlot = (name: string) => {
     return !!slots[name];
 };
 </script>

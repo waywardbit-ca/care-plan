@@ -7,9 +7,6 @@ import Routine from '../components/plan/Routine.vue';
 import Agitation from '../components/plan/Agitation.vue';
 import Refusal from '../components/plan/Refusal.vue';
 import Behaviour from '../components/plan/Behaviour.vue';
-import { ref } from 'vue';
-
-
 </script>
 
 <template>
