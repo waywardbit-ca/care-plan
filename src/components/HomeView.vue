@@ -7,6 +7,9 @@ import Routine from '../components/plan/Routine.vue';
 import Agitation from '../components/plan/Agitation.vue';
 import Refusal from '../components/plan/Refusal.vue';
 import Behaviour from '../components/plan/Behaviour.vue';
+import { ref } from 'vue';
+
+
 </script>
 
 <template>
@@ -21,8 +24,12 @@ import Behaviour from '../components/plan/Behaviour.vue';
         </div>
     </div>
     <div class="row">
-        <div class="col-12 col-md-6">
+        <div class="col-12">
             <Routine></Routine>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-6">
             <Agitation></Agitation>
             <Refusal></Refusal>
         </div>

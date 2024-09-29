@@ -1,11 +1,13 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Panel from '../../components/controls/Panel.vue';
+</script>
 
 <template>
-    <div class="card well p-1 mb-3">
+    <Panel type="basic">
         <p>
             Stuff.
         </p>
-    </div>
+    </Panel>
 </template>
 
 <style scoped></style>
