@@ -9,6 +9,7 @@ export interface iIcon {
 export interface iProps {
     type?: 'bad' | 'basic' | 'caution' | 'default' | 'good' | 'info';
     icon?: iIcon;
+    content?: []
 };
 
 const props = withDefaults(defineProps<iProps>(), {

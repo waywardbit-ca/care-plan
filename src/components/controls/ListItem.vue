@@ -1,23 +1,29 @@
 <script setup lang="ts">
+import { iList } from '../../components/controls/List.vue';
 import Item, { iIcon } from '../../components/controls/Item.vue';
 import { inject, ref } from 'vue';
 
-export interface iProps {
+export interface iListItem {
     icon?: iIcon;
     type?: 'bad';
+    text?: string;
+    subList?: iList;
 };
 
-const props = defineProps<iProps>();
+const props = defineProps<iListItem>();
 const direction = ref(inject('direction'));
 </script>
 
 <template>
     <li :class="{
-        'list-inline-item' : direction === 'horizontal',
+        'list-inline-item': direction === 'horizontal',
         'text-danger': type === 'bad'
     }">
         <Item :icon="props.icon">
-            <slot></slot>
+            <span v-if="props.text" v-html="props.text"></span>
+            <template v-if="!props.text">
+                <slot></slot>
+            </template>
         </Item>
     </li>
 </template>

@@ -1,13 +1,16 @@
 <script setup lang="ts">
+import { iListItem } from '../../components/controls/ListItem.vue';
 import { provide } from 'vue';
 
-export interface iProps {
+export interface iList {
     direction?: 'horizontal' | 'vertical';
     unstyled?: boolean;
     indent?: boolean;
+    text?: string,
+    items?: (iList | iListItem)[]
 };
 
-const props = withDefaults(defineProps<iProps>(), {
+const props = withDefaults(defineProps<iList>(), {
     direction: 'vertical',
     unstyled: true,
     indent: false
@@ -27,7 +30,7 @@ provide("direction", props.direction);
 </template>
 
 <style scoped>
-:deep(li.list-inline-item + li.list-inline-item) {
-    margin-left: 10px
+:deep(li.list-inline-item) {
+    margin-right: 10px
 }
 </style>
